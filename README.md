@@ -1,6 +1,4 @@
----
-
-# ⚙️ Setup & Usage Guide
+# ⚙️ Setup & Usage Guide 
 
 ## 🔒 Prerequisites (Mandatory)
 
@@ -16,7 +14,7 @@ Verify installation:
 ollama --version
 ```
 
----
+
 
 ### 2. Pull Required Model
 
@@ -28,7 +26,8 @@ ollama pull deepseek-coder:6.7b
 
 > ⚠️ Constraint: The agent expects a **code-capable model**. Using other models may degrade output quality or break formatting.
 
----
+
+
 
 ### 3. Ensure Ollama is Running
 
@@ -38,7 +37,8 @@ ollama serve
 
 If already running, you may see a port error—that’s fine.
 
----
+
+
 
 # 🧩 Step-by-Step: Add `worm` to System PATH
 
@@ -58,7 +58,8 @@ worm.bat
 core/
 ```
 
----
+
+
 
 ## Step 2 — Validate `worm.bat`
 
@@ -69,7 +70,8 @@ Open `worm.bat` and ensure:
 python "%~dp0worm.py" %*
 ```
 
----
+
+
 
 ## Step 3 — Add Folder to PATH
 
@@ -88,7 +90,8 @@ python "%~dp0worm.py" %*
 
 7. Click **OK** → **OK** → **OK**
 
----
+
+
 
 ### Option B — PowerShell Method
 
@@ -100,14 +103,16 @@ python "%~dp0worm.py" %*
 )
 ```
 
----
+
+
 
 ## Step 4 — Restart Terminal (Critical)
 
 * Close VS Code completely
 * Reopen terminal
 
----
+
+
 
 ## Step 5 — Verify Installation
 
@@ -121,7 +126,8 @@ Expected output:
 ..\worm-agent\worm.bat
 ```
 
----
+
+
 
 # 🚀 Usage
 
@@ -131,7 +137,8 @@ Expected output:
 worm conftest.py "optimize and clean code"
 ```
 
----
+
+
 
 ## With Piped Input
 
@@ -139,7 +146,8 @@ worm conftest.py "optimize and clean code"
 type conftest.py | worm "refactor and improve structure"
 ```
 
----
+
+
 
 # ❌ If `worm` Command Does NOT Work
 
@@ -149,7 +157,8 @@ type conftest.py | worm "refactor and improve structure"
 ..\worm-agent\worm.bat conftest.py "fix bugs"
 ```
 
----
+
+
 
 ## 2. Temporary PATH Fix (Session Only)
 
@@ -163,7 +172,8 @@ Then:
 worm conftest.py "optimize code"
 ```
 
----
+
+
 
 ## 3. Use PowerShell Alias (Quick Fix)
 
@@ -171,7 +181,8 @@ worm conftest.py "optimize code"
 Set-Alias worm "..\worm-agent\worm.bat"
 ```
 
----
+
+
 
 ## 4. Verify File Extension
 
@@ -192,7 +203,8 @@ NOT:
 * `worm.bat.txt` ❌
 * `worm` ❌
 
----
+
+
 
 # ⚠️ Common Issues
 
@@ -204,7 +216,8 @@ listen tcp 127.0.0.1:11434: bind error
 
 ✔ Means Ollama is already running → ignore
 
----
+
+
 
 ### `worm not recognized`
 
@@ -212,7 +225,8 @@ listen tcp 127.0.0.1:11434: bind error
 ✔ Terminal not restarted
 ✔ `.bat` not detected
 
----
+
+
 
 ### Broken Virtual Environment
 
@@ -224,7 +238,8 @@ venv\Scripts\activate
 python -m pip install --upgrade pip
 ```
 
----
+
+
 
 # 🧠 Summary
 
@@ -236,7 +251,8 @@ To run WORM Agent successfully:
 * ✔ Terminal restarted
 * ✔ Command verified using `where worm`
 
----
+
+
 
 # 🔥 Pro Tip
 
@@ -246,4 +262,3 @@ For a cleaner setup (no `.bat`, no PATH issues), convert this into a CLI tool us
 pip install -e .
 ```
 
----
