@@ -70,7 +70,7 @@ def write_file(path, content):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage:\n worm <file.py> \"prompt\"\n OR\n cat file.py | worm \"prompt\"")
+        print("Usage:\n assertix <file.py> \"prompt\"\n OR\n cat file.py | assertix \"prompt\"")
         return
 
     user_prompt = sys.argv[-1]

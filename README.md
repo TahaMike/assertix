@@ -2,7 +2,7 @@
 
 ## 🔒 Prerequisites (Mandatory)
 
-Before using WORM Agent, ensure the following:
+Before using assertix Agent, ensure the following:
 
 ### 1. Install Ollama
 
@@ -40,34 +40,34 @@ If already running, you may see a port error—that’s fine.
 
 
 
-# 🧩 Step-by-Step: Add `worm` to System PATH
+# 🧩 Step-by-Step: Add `assertix` to System PATH
 
 ## Step 1 — Verify Project Location
 
 Example:
 
 ```text
-..\worm-agent
+..\assertix
 ```
 
 Ensure it contains:
 
 ```text
-worm.py
-worm.bat
+assertix.py
+assertix.bat
 core/
 ```
 
 
 
 
-## Step 2 — Validate `worm.bat`
+## Step 2 — Validate `assertix.bat`
 
-Open `worm.bat` and ensure:
+Open `assertix.bat` and ensure:
 
 ```bat
 @echo off
-python "%~dp0worm.py" %*
+python "%~dp0assertix.py" %*
 ```
 
 
@@ -85,7 +85,7 @@ python "%~dp0worm.py" %*
 6. Click **New** → add:
 
 ```text
-..\worm-agent
+..\assertix
 ```
 
 7. Click **OK** → **OK** → **OK**
@@ -98,7 +98,7 @@ python "%~dp0worm.py" %*
 ```powershell
 [Environment]::SetEnvironmentVariable(
   "Path",
-  [Environment]::GetEnvironmentVariable("Path", "User") + ";..\worm-agent",
+  [Environment]::GetEnvironmentVariable("Path", "User") + ";..\assertix",
   "User"
 )
 ```
@@ -117,13 +117,13 @@ python "%~dp0worm.py" %*
 ## Step 5 — Verify Installation
 
 ```powershell
-where worm
+where assertix
 ```
 
 Expected output:
 
 ```text
-..\worm-agent\worm.bat
+..\assertix\assertix.bat
 ```
 
 
@@ -134,7 +134,7 @@ Expected output:
 ## Basic Command
 
 ```powershell
-worm conftest.py "optimize and clean code"
+assertix conftest.py "optimize and clean code"
 ```
 
 
@@ -143,18 +143,18 @@ worm conftest.py "optimize and clean code"
 ## With Piped Input
 
 ```powershell
-type conftest.py | worm "refactor and improve structure"
+type conftest.py | assertix "refactor and improve structure"
 ```
 
 
 
 
-# ❌ If `worm` Command Does NOT Work
+# ❌ If `assertix` Command Does NOT Work
 
 ## 1. Try Direct Execution
 
 ```powershell
-..\worm-agent\worm.bat conftest.py "fix bugs"
+..\assertix\assertix.bat conftest.py "fix bugs"
 ```
 
 
@@ -163,13 +163,13 @@ type conftest.py | worm "refactor and improve structure"
 ## 2. Temporary PATH Fix (Session Only)
 
 ```powershell
-$env:Path += ";..\worm-agent"
+$env:Path += ";..\assertix"
 ```
 
 Then:
 
 ```powershell
-worm conftest.py "optimize code"
+assertix conftest.py "optimize code"
 ```
 
 
@@ -178,7 +178,7 @@ worm conftest.py "optimize code"
 ## 3. Use PowerShell Alias (Quick Fix)
 
 ```powershell
-Set-Alias worm "..\worm-agent\worm.bat"
+Set-Alias assertix "..\assertix\assertix.bat"
 ```
 
 
@@ -189,19 +189,19 @@ Set-Alias worm "..\worm-agent\worm.bat"
 Run:
 
 ```powershell
-ls ..\worm-agent
+ls ..\assertix
 ```
 
 Ensure:
 
 ```text
-worm.bat
+assertix.bat
 ```
 
 NOT:
 
-* `worm.bat.txt` ❌
-* `worm` ❌
+* `assertix.bat.txt` ❌
+* `assertix` ❌
 
 
 
@@ -219,7 +219,7 @@ listen tcp 127.0.0.1:11434: bind error
 
 
 
-### `worm not recognized`
+### `assertix not recognized`
 
 ✔ PATH not set correctly
 ✔ Terminal not restarted
@@ -243,13 +243,13 @@ python -m pip install --upgrade pip
 
 # 🧠 Summary
 
-To run WORM Agent successfully:
+To run assertix Agent successfully:
 
 * ✔ Ollama installed and running
 * ✔ `deepseek-coder:6.7b` model pulled
-* ✔ `worm-agent` folder added to PATH
+* ✔ `assertix` folder added to PATH
 * ✔ Terminal restarted
-* ✔ Command verified using `where worm`
+* ✔ Command verified using `where assertix`
 
 
 
