@@ -8,9 +8,7 @@ Before using WORM Agent, ensure the following:
 
 ### 1. Install Ollama
 
-Download and install from:
-
-[Ollama Official Website](https://ollama.com?utm_source=chatgpt.com)
+Download and install from: [Ollama Official Website](https://ollama.com?utm_source=chatgpt.com)
 
 Verify installation:
 
