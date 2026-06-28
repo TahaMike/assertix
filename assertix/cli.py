@@ -92,7 +92,7 @@ def main():
     raw_result = query_ollama(prompt)
     result = extract_code(raw_result)
 
-    MAX_RETRIES = 3
+    MAX_RETRIES = 1 # Change for multiple retries 
 
     for attempt in range(MAX_RETRIES + 1):
         valid, error = is_valid_python(result)
