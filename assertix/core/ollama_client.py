@@ -1,5 +1,5 @@
 import requests
-from assertix.config import OLLAMA_URL, MODEL
+from assertix.config import MODEL, OLLAMA_URL
 
 def query_ollama(prompt):
     res = requests.post(OLLAMA_URL, json={

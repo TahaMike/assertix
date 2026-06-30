@@ -2,7 +2,7 @@
 name = "assertix"
 version = "0.1.0"
 description = "AI-powered code refactoring and validation CLI"
-authors = [{name = "Taha"}]
+authors = [{name = "TahaMike"}]
 dependencies = [
     "requests"
 ]

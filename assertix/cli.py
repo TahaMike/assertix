@@ -2,12 +2,21 @@ import sys
 import os
 import re
 import ast
+# import argparse
+
 
 from assertix.core.scanner import get_python_files
 from assertix.core.context_builder import build_context
 from assertix.core.prompt_builder import build_prompt
 from assertix.core.ollama_client import query_ollama
 from assertix.core.diff_engine import show_diff
+
+
+# parser = argparse.ArgumentParser()
+# parser.add_argument("--engine", choices=["ollama", "local"], default="local")
+
+# args = parser.parse_args()
+
 
 def is_valid_python(code):
     try:
@@ -92,26 +101,26 @@ def main():
     raw_result = query_ollama(prompt)
     result = extract_code(raw_result)
 
-    MAX_RETRIES = 1 # Change for multiple retries 
+    # MAX_RETRIES = 1 # Change for multiple retries
 
-    for attempt in range(MAX_RETRIES + 1):
-        valid, error = is_valid_python(result)
+    # for attempt in range(MAX_RETRIES + 1):
+    #     valid, error = is_valid_python(result)
 
-        if valid:
-            if attempt == 0:
-                print("[✔] Code valid on first attempt")
-            else:
-                print(f"[✔] Auto-fix successful after {attempt} retry(s)")
-            break
+    #     if valid:
+    #         if attempt == 0:
+    #             print("[✔] Code valid on first attempt")
+    #         else:
+    #             print(f"[✔] Auto-fix successful after {attempt} retry(s)")
+    #         break
 
-        print(f"[!] Attempt {attempt + 1}: Syntax error detected")
-        print(f"    → {error}")
+    #     print(f"[!] Attempt {attempt + 1}: Syntax error detected")
+    #     print(f"    → {error}")
 
-        if attempt == MAX_RETRIES:
-            print("[✖] Failed after max retries. Aborting.")
-            return
+    #     if attempt == MAX_RETRIES:
+    #         print("[✖] Failed after max retries. Aborting.")
+    #         return
 
-        result = retry_fix(user_prompt, result, error, context)
+    #     result = retry_fix(user_prompt, result, error, context)
 
     print("\n--- DIFF ---\n")
     show_diff(target_code, result)
